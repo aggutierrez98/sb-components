@@ -21,6 +21,8 @@ export interface MyLabelProps {
    * Selector del color de la fuente
    */
   fontColor?: string;
+
+  backgroundColor?: string;
 }
 
 /**
@@ -32,11 +34,12 @@ export const MyLabel = ({
   color = "primary",
   allCaps = false,
   fontColor,
+  backgroundColor = "transparent",
 }: MyLabelProps) => {
   return (
     <span
       className={`label ${size} text-${color} ${allCaps && "caps"}`}
-      style={{ color: fontColor }}
+      style={{ color: fontColor, backgroundColor }}
     >
       {label}
     </span>
